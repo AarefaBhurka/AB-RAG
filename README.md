@@ -10,20 +10,20 @@ Most RAG projects glue together LangChain, a hosted vector database, and a paid 
 
 ```
  INGESTION
- files ──▶ Loaders (txt/code · PDF · DOCX · HTML✋ · CSV✋)
-              └─▶ Chunker✋ (paragraph packing + overlap)
+ files ──▶ Loaders (txt/code · PDF · DOCX · HTML · CSV)
+              └─▶ Chunker (paragraph packing + overlap)
                      └─▶ Embedder (all-MiniLM-L6-v2, runs locally via transformers.js)
-                            ├─▶ VectorIndex✋  (exact cosine search)
-                            └─▶ BM25Index✋   (lexical search)
+                            ├─▶ VectorIndex  (exact cosine search)
+                            └─▶ BM25Index   (lexical search)
 
  QUERY
- question ─▶ condense✋ (multi-turn only: rewrite follow-ups standalone)
+ question ─▶ condense (multi-turn only: rewrite follow-ups standalone)
      ├─▶ vector top-20 ──┐
-     └─▶ BM25 top-20 ────┴─▶ Reciprocal Rank Fusion✋
-                                 └─▶ token budget✋ ─▶ edge ordering✋ ("lost in the middle")
-                                        └─▶ local LLM (Ollama) ─▶ answer + [n] citations✋
+     └─▶ BM25 top-20 ────┴─▶ Reciprocal Rank Fusion
+                                 └─▶ token budget ─▶ edge ordering ("lost in the middle")
+                                        └─▶ local LLM (Ollama) ─▶ answer + [n] citations
 
- ✋ = implemented from scratch
+  = implemented from scratch
 ```
 
 **The pipeline, stage by stage:**
