@@ -1,0 +1,42 @@
+[
+  {
+    "question": "How is the overlap between consecutive chunks implemented?",
+    "expectedSources": ["src/chunking/chunker.ts"]
+  },
+  {
+    "question": "What formula scores keyword matches with term frequency saturation?",
+    "expectedSources": ["src/index/bm25.ts"]
+  },
+  {
+    "question": "Why fuse search results by rank instead of adding the scores together?",
+    "expectedSources": ["src/index/hybrid.ts"]
+  },
+  {
+    "question": "Which sentence transformer model turns text into vectors?",
+    "expectedSources": ["src/embeddings/embedder.ts"]
+  },
+  {
+    "question": "How does nearest neighbor search find the closest stored vectors?",
+    "expectedSources": ["src/index/vector.ts"]
+  },
+  {
+    "question": "Which file extensions are discovered when indexing a directory?",
+    "expectedSources": ["src/ingest/loader.ts"]
+  },
+  {
+    "question": "What commands can I run from the terminal to index and query?",
+    "expectedSources": ["src/cli.ts"]
+  },
+  {
+    "question": "How are citation markers like [1] extracted from the generated answer?",
+    "expectedSources": ["src/generate/ollama.ts"]
+  },
+  {
+    "question": "What data shape represents a retrievable unit of text?",
+    "expectedSources": ["src/types.ts"]
+  },
+  {
+    "question": "hit rate MRR reciprocal rank evaluation",
+    "expectedSources": ["src/eval/metrics.ts"]
+  }
+]
